@@ -1,12 +1,11 @@
 name: parallel-workflow
-on: wworkflow_dispatch
+on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Build Step
         run: echo "Build Step"
-
   
   test:
     runs-on: ubuntu-latest
