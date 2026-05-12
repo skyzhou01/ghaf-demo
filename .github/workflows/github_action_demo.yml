@@ -1,0 +1,13 @@
+name: Github Action Demo
+on: push
+jobs:
+  action-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Code Repo
+        uses: actions/checkout@v4
+      - name: Print the context of the HTML file
+        run: |
+          cat index.html
+          echo "Good job"
+        
