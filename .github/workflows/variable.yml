@@ -1,0 +1,22 @@
+name: variable-workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Step
+        run: echo "Build Step {{ vars.APPLICATION}}"
+  
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Test Step
+        run: echo "Test Step {{ secrets.APPLICATION_SECRET }}"
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Deploy Step
+        run: echo "Deploy Step"
