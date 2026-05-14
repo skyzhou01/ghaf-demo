@@ -2,8 +2,8 @@ name: Outputs variable demo
 on: workflow_dispatch
 jobs:
   build:
-    # outputs:
-    #   build_version: ${{ steps.step1.outputs.version }}
+    outputs:
+      build_version: ${{ steps.step1.outputs.version }}
     runs-on: ubuntu-latest
     steps:
       - name: Step One
@@ -11,10 +11,10 @@ jobs:
         run: echo "version=0.0.1" >> $GITHUB_OUTPUT
       - name: Step Two
         run: echo "The output variable is ${{ steps.step1.outputs.version }}"
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Deploy the App
-  #       run: echo "We are deploying this version: ${{ needs.build.outputs.build_version }}"
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the App
+        run: echo "We are deploying this version ${{ needs.build.outputs.build_version }}"
     
