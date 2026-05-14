@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
   build:
     outputs:
-      version: ${{ steps.step1.outputs.version }}
+      build_version: ${{ steps.step1.outputs.version }}
     runs-on: ubuntu-latest
     steps:
       - name: Step One
@@ -16,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the App
-        run: echo "We are deploying this version: ${{ needs.build.outputs.verson }}"
+        run: echo "We are deploying this version: ${{ needs.build.outputs.build_version }}"
     
