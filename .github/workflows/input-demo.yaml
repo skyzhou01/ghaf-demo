@@ -6,9 +6,9 @@ on:
         description: Choose the environment to deploy
         required: true
         default: dev
-  jobs:
-    inputs-demo-env:
-      runs-on: ubuntu-lasest
-      steps:
-        - name: Deploy the app
-          run: echo "Deploying the application to ${{ inputs.environment }}"
+jobs:
+  inputs-demo-env:
+    runs-on: ubuntu-lasest
+    steps:
+      - name: Deploy the app
+        run: echo "Deploying the application to ${{ inputs.environment }}"
