@@ -1,0 +1,10 @@
+name: Or condition demo
+on: push
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run this step is main
+        if: github.actor == 'skyzhou01' || github.actor == 'skyzhou01'
+        run: echo "Running for the main branch"
+      
