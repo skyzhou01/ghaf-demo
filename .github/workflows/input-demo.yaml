@@ -7,7 +7,7 @@ on:
         required: true
         default: dev
   jobs:
-    input-demo:
+    inputs-demo-env:
       runs-on: ubuntu-lasest
       steps:
         - name: Deploy the app
